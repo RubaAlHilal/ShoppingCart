@@ -1,7 +1,13 @@
 import "./App.css";
+import HomePage from "./pages/Home";
+import { CartProvider } from "./context/cartContext"; // استيراد الـ Provider الصحيح
 
 function App() {
-  return <h1 className="text-center">App</h1>;
+  return (
+    <CartProvider>
+      <HomePage />
+    </CartProvider>
+  );
 }
 
 export default App;
