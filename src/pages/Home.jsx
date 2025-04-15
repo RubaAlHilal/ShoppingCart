@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Slider from "../components/Slider";
@@ -12,7 +12,10 @@ function HomePage() {
       <Header />
       <Hero />
       <Slider />
-      <ProductList cart={cart} addToCart={addToCart} removeFromCart = {removeFromCart}/>
+      <ProductList
+       cart={cart}
+       addToCart={addToCart}
+       removeFromCart = {removeFromCart}/>
       <Footer />
     </div>
   );

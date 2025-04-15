@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext} from "react";
 import Product from "./Product";
+import { CartContext } from "../context/cartContext";
 
 function ProductList() {
   const [products, setProducts] = useState([]);
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
 
   const fetchData = async () => {
     try {
@@ -25,7 +27,12 @@ function ProductList() {
         <div className="container">
           <div className="row">
             {products.map((product) => (
-              <Product product={product} key={product.id} />
+              <Product
+               product={product}
+               key={product.id}
+               cart={cart}
+               addToCart={addToCart}
+               removeFromCart={removeFromCart} />
             ))}
           </div>
         </div>
